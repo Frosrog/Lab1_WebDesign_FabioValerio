@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
     <title>Lab1_WebDesign</title>
 </head>
 <body>
     <div class="button"><button id="cambiarFondobtn">Cambiar Fondo de Pantalla</button></div>
     <div class="container">
         <h2>¿Qué haces?</h2>
-        <input type="text">
-        <button id="agregar">Agregar</button>
-        <div class="container"></div>
+        <input type="text" id="comment">
+        <button id="addComment">Agregar</button>
+        
+        
+        <div id="commentsBox" style="background: green;width: 400px;height: 400px;">
+            <p id="lol"></p>
+        </div>
+        <div id="googleMap">
+                <script type="text/javascript" src="js/mapa.js"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbygQee1bHKcKBq2Aq948mOga6Z60XbuI&callback=initMap"></script>
+            </div>
     </div>
 
 </body>

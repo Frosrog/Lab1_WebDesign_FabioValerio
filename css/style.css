@@ -1,0 +1,19 @@
+#googleMap {
+    width:400px;
+    height:400px;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    
+  }
+
+#cambiarFondobtn{
+    padding: 8px;
+    margin: 10px;
+    
+}
