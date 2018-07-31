@@ -1,4 +1,6 @@
-var map, infoWindow;
+var map, infoWindow , myLatLng;
+var cont = 0;
+var body = document.getElementsByTagName(body);
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('googleMap'), {
@@ -14,6 +16,7 @@ function initMap() {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
+      myLatLng = pos;
       map.setCenter(pos);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
@@ -37,10 +40,15 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 function addComment() {
     var now = new Date();
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: "Tweet Publicado el día "+ now.toLocaleString()
+      });
+      marker.setMap(map);
+    
     comment = document.getElementById('comment').value;
-    document.getElementById("lol").innerHTML +=
-    comment +" tweet publicado el día " + (now.getDate() + "/" + (now.getMonth() +1) + "/" + now.getFullYear())+" a las "
-    + now.getHours()+ ":"+ now.getMinutes()+"<br/>";
+    document.getElementById("lol").innerHTML +=  comment + "</br>" + marker.title+"</br>";
     document.getElementById('comment').value ="";
     
     
@@ -52,4 +60,35 @@ boton.addEventListener('click', function() {
 });
 
 var botonFondo = document.getElementById("cambiarFondobtn");
+
+function changeBackground() {
+    if (cont== 0){
+        document.body.style.backgroundImage = "url('img/152351438-main.jpg')";
+        
+        cont = 1;
+    }else if(cont == 1){
+        
+        document.body.style.backgroundImage = "url('img/nier-automata-4k-qu.jpg')";
+        
+        cont = 2;
+    }
+    else if(cont == 2){
+        
+        document.body.style.backgroundImage = "url('img/world-of-warcraft-wallpaper-design-art-walls.jpg')";
+        
+        cont = 0;
+    }
+    
+    
+};
+botonFondo.addEventListener('click', function() {
+    changeBackground();
+});
+
+var markerOld = document.getElementById("lol");
+markerOld.addEventListener('click', function() {
+    console.log(markerOld.id);
+
+    map.setCenter(markerOld.id);
+});
 

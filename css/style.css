@@ -1,19 +1,40 @@
+
 #googleMap {
     width:400px;
     height:400px;
   }
   html, body {
     height: 100%;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    
+    background-size: cover;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: black;
     display: flex;
-    flex-flow: column;
-    flex-wrap: wrap;
+    justify-content: center;
     
   }
 
 #cambiarFondobtn{
+    margin: 8px;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: darkblue;
+    color: white;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    font-size: 20px;
+    justify-self: start;
+}
+
+#commentsBox{
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding: 8px;
-    margin: 10px;
-    
+    background: green;
+    width: 400px;
+    height: 150px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
 }
